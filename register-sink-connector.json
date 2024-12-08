@@ -1,0 +1,18 @@
+{
+  "name": "mysql-sink-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics.regex":"dbserver1.dataops.*",
+    "table.name.format": "${topic}",
+    "connection.url": "jdbc:mysql://mysql:3306/sinkdb",
+    "connection.username": "debezium",
+    "connection.password": "dbz",
+    "schema.evolution": "basic", 
+    "insert.mode": "insert",
+    "delete.enabled": "true",  
+    "auto.create": "true",
+    "auto.evolve": "true"
+  }
+}
+
